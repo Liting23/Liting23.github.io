@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>Java教程 （三） 对象与类 | Liting</title>
+<meta name="description" content="个人博客">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://liting23.github.io//favicon.ico?v=1629105908211">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://liting23.github.io//styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://liting23.github.io/">
+        <img class="avatar" src="https://liting23.github.io//images/avatar.png?v=1629105908211" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://liting23.github.io/">
+        <h1 class="site-title">Liting</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="https://liting23.github.io/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+            <div class="feature-container" style="background-image: url('https://liting23.github.io//post-images/java3.jpg')">
+            </div>
+          
+          <h2 class="post-title">Java教程 （三） 对象与类</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2021-08-16</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://liting23.github.io/FVnAJpQHw/">
+                    Java
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            </div>
+<div class="content-bg">
+<div class="content-intro view-box "><p>在理解Java的类和对象之前，先简单介绍一下面向对象的程序设计。程序设计是通过对象对程序进行设计，对象代表一个实体，实体可以清楚地被识别。</p><p>Java作为一种面向对象语言。支持以下基本概念：</p>
+<ul>
+    <li>多态</li>
+    <li>继承</li>
+    <li>封装</li>
+    <li>抽象</li>
+    <li>类</li>
+    <li>对象</li>
+    <li>实例</li>
+    <li>方法</li>
+    <li>消息解析</li>
+</ul>
+<p>本节我们重点研究对象和类的概念。</p>
+<ul>
+    <li align="left"> <strong>对象</strong>：对象是类的一个实例，有状态和行为。例如，一条狗是一个对象，它的状态有：颜色、名字、品种；行为有：摇尾巴、叫、吃等。</li>
+    <li align="left"> <strong>类</strong>：类是一个模板，它描述一类对象的行为和状态。</li>
+</ul>
+<hr>
+ <h2> Java中的对象</h2> 
+<p>现在让我们深入了解什么是对象。看看周围真实的世界，会发现身边有很多对象，车，狗，人等等。所有这些对象都有自己的状态和行为。</p>
+<p>拿一条狗来举例，它的状态有：名字、品种、颜色，行为有：叫、摇尾巴和跑。</p>
+<p>对比现实对象和软件对象，它们之间十分相似。</p>
+<p>软件对象也有状态和行为。软件对象的状态就是属性，行为通过方法体现。</p>
+<p>在软件开发中，方法操作对象内部状态的改变，对象的相互调用也是通过方法来完成。</p>
+ <h2>Java中的类</h2> 
+<p>类可以看成是创建 Java 对象的模板。</p>
+<p>通过下面一个简单的类来理解下 Java 中类的定义：</p> <pre lang="java"><code class="java">public class Dog{
+   String breed;
+   int age;
+   String color;
+   void barking(){
+   }
+<p>void hungry(){<br>
+}</p>
+<p>void sleeping(){<br>
+}<br>
+}<br>
+</code></pre></p>
+<p>一个类可以包含以下类型变量：</p>
+<ul>
+    <li> <strong>局部变量</strong>：在方法、构造方法或者语句块中定义的变量被称为局部变量。变量声明和初始化都是在方法中，方法结束后，变量就会自动销毁。</li>
+    <li> <strong>成员变量</strong>：成员变量是定义在类中，方法体之外的变量。这种变量在创建对象的时候实例化。成员变量可以被类中方法、构造方法和特定类的语句块访问。</li>
+    <li> <strong>类变量</strong>：类变量也声明在类中，方法体之外，但必须声明为 static 类型。</li>
+</ul>
+<p>一个类可以拥有多个方法，在上面的例子中：​<code>barking()</code>​、​<code>hungry()</code>​和 ​<code>sleeping()</code>​都是 Dog 类的方法。</p>
+<hr>
+ <h2>构造方法</h2> 
+<p>每个类都有构造方法。如果没有显式地为类定义构造方法，Java编译器将会为该类提供一个默认构造方法。</p>
+<p>在创建一个对象的时候，至少要调用一个构造方法。构造方法的名称必须与类同名，一个类可以有多个构造方法。</p>
+<p>下面是一个构造方法示例：</p> <pre lang="java"><code class="java">public class Puppy{
+   public Puppy(){
+   }
+<p>public Puppy(String name){<br>
+// 这个构造器仅有一个参数：name<br>
+}<br>
+}<br>
+</code></pre></p>
+<hr>
+ <h2>创建对象</h2> 
+<p>对象是根据类创建的。在 Java 中，使用关键字 ​<code>new</code>​ 来创建一个新的对象。创建对象需要以下三步：</p>
+<ul>
+    <li> <strong>声明</strong>：声明一个对象，包括对象名称和对象类型。</li>
+    <li> <strong>实例化</strong>：使用关键字 ​<code>new</code>​ 来创建一个对象。</li>
+    <li> <strong>初始化</strong>：使用 ​<code>new</code>​ 创建对象时，会调用构造方法初始化对象。</li>
+</ul>
+<p>下面是一个创建对象的例子：</p> <pre lang="java"><code class="java">public class Puppy{
+   public Puppy(String name){
+      //这个构造器仅有一个参数：name
+      System.out.println("Puppy Name is :" + name ); 
+   }
+   public static void main(String []args){
+      // 下面的语句将创建一个Puppy对象
+      Puppy myPuppy = new Puppy( "tommy" );
+   }
+}
+</code></pre> 
+<p>编译并运行上面的程序，会打印出下面的结果：</p> <pre lang="java"><code class="java">Puppy Name is :tommy
+</code></pre> 
+<hr>
+<h2> 访问实例变量和方法</h2> 
+<p>通过已创建的对象来访问成员变量和成员方法，如下所示：</p> <pre lang="java"><code class="java">/* 实例化对象 */
+ObjectReference = new Constructor();
+/* 访问其中的变量 */
+ObjectReference.variableName;
+/* 访问类中的方法 */
+ObjectReference.MethodName();
+</code></pre> 
+<hr>
+ <h2>实例</h2>
+<p>下面的例子展示如何访问实例变量和调用成员方法：</p> <pre lang="java"><code class="java">public class Puppy{
+   int puppyAge;
+   public Puppy(String name){
+      // 这个构造器仅有一个参数：name
+      System.out.println("Passed Name is :" + name ); 
+   }
+<p>public void setAge( int age ){<br>
+puppyAge = age;<br>
+}</p>
+<p>public int getAge( ){<br>
+System.out.println(&quot;Puppy's age is :&quot; + puppyAge );<br>
+return puppyAge;<br>
+}</p>
+<p>public static void main(String []args){<br>
+/* 创建对象 <em>/<br>
+Puppy myPuppy = new Puppy( &quot;tommy&quot; );<br>
+/</em> 通过方法来设定age <em>/<br>
+myPuppy.setAge( 2 );<br>
+/</em> 调用另一个方法获取age */<br>
+myPuppy.getAge( );<br>
+/*你也可以像下面这样访问成员变量 */<br>
+System.out.println(&quot;Variable Value :&quot; + myPuppy.puppyAge );<br>
+}<br>
+}<br>
+</code></pre></p>
+<p>编译并运行上面的程序，产生如下结果：</p> <pre lang="java"><code class="java">Passed Name is :tommy
+Puppy&#39;s age is :2
+Variable Value :2
+</code></pre> 
+<hr>
+ <h2>源文件声明规则</h2> 
+<p>在本节的最后部分，我们将学习源文件的声明规则。当在一个源文件中定义多个类，并且还有​<code>import</code>​语句和​<code>package</code>​ 语句时，要特别注意这些规则。</p>
+<ul>
+    <li>一个源文件中只能有一个 ​<code>public</code>​ 类</li>
+    <li>一个源文件可以有多个非​<code>public</code>​类</li>
+    <li>源文件的名称应该和​<code>public</code>​类的类名保持一致。例如：源文件中​<code>public</code>​类的类名是​<code>Employee</code>​，那么源文件应该命名为​<code>Employee.java</code>​。</li>
+    <li>如果一个类定义在某个包中，那么​<code>package</code>​语句应该在源文件的首行。</li>
+    <li>如果源文件包含​<code>import</code>​语句，那么应该放在​<code>package</code>​语句和类定义之间。如果没有​<code>package</code>​语句，那么​<code>import</code>​语句应该在源文件中最前面。</li>
+    <li>​<code>import</code>​语句和​<code>package</code>​语句对源文件中定义的所有类都有效。在同一源文件中，不能给不同的类不同的包声明。</li>
+</ul>
+<p>类有若干种访问级别，并且类也分不同的类型：抽象类和​<code>final</code>​类等。这些将在访问控制章节介绍。</p>
+<p>除了上面提到的几种类型，Java 还有一些特殊的类，如：内部类、匿名类。</p>
+<hr>
+ <h2>Java包</h2> 
+<p>包主要用来对类和接口进行分类。当开发 Java 程序时，可能编写成百上千的类，因此很有必要对类和接口进行分类。</p>
+ <h2>Import语句</h2> 
+<p>在 Java 中，如果给出一个完整的限定名，包括包名、类名，那么 Java 编译器就可以很容易地定位到源代码或者类。​<code>Import</code>​ 语句就是用来提供一个合理的路径，使得编译器可以找到某个类。</p>
+<p>例如，下面的命令行将会命令编译器载入 java_installation/java/io 路径下的所有类</p> <pre lang="java"><code class="java">import java.io.*;
+</code></pre> 
+<hr>
+ <h2>一个简单的例子</h2> 
+<p>在该例子中，我们创建两个类：Employee 和 EmployeeTest。</p>
+<p>首先打开文本编辑器，把下面的代码粘贴进去。注意将文件保存为 Employee.java。</p>
+<p>Employee 类有四个成员变量：name、age、designation 和 salary。该类显式声明了一个构造方法，该方法只有一个参数。</p> <pre lang="java"><code class="java">import java.io.*;
+public class Employee{
+   String name;
+   int age;
+   String designation;
+   double salary;
+   // Employee 类的构造器
+   public Employee(String name){
+      this.name = name;
+   }
+   // 设置age的值
+   public void empAge(int empAge){
+      age =  empAge;
+   }
+   /* 设置designation的值*/
+   public void empDesignation(String empDesig){
+      designation = empDesig;
+   }
+   /* 设置salary的值*/
+   public void empSalary(double empSalary){
+      salary = empSalary;
+   }
+   /* 打印信息 */
+   public void printEmployee(){
+      System.out.println("Name:"+ name );
+      System.out.println("Age:" + age );
+      System.out.println("Designation:" + designation );
+      System.out.println("Salary:" + salary);
+   }
+}
+</code></pre> 
+<p>程序都是从 ​<code>main</code>​方法开始执行。为了能运行这个程序，必须包含 ​<code>main</code>​ 方法并且创建一个实例对象。</p>
+<p>下面给出 EmployeeTest 类，该类实例化2个 Employee 类的实例，并调用方法设置变量的值。</p>
+<p>将下面的代码保存在 EmployeeTest.java 文件中。</p> <pre lang="java"><code class="java">import java.io.*;
+public class EmployeeTest{
+<p>public static void main(String args[]){<br>
+/* 使用构造器创建两个对象 */<br>
+Employee empOne = new Employee(&quot;James Smith&quot;);<br>
+Employee empTwo = new Employee(&quot;Mary Anne&quot;);</p>
+<pre><code>  // 调用这两个对象的成员方法
+  empOne.empAge(26);
+  empOne.empDesignation(&quot;Senior Software Engineer&quot;);
+  empOne.empSalary(1000);
+  empOne.printEmployee();
+
+  empTwo.empAge(21);
+  empTwo.empDesignation(&quot;Software Engineer&quot;);
+  empTwo.empSalary(500);
+  empTwo.printEmployee();
+</code></pre>
+<p>}<br>
+}<br>
+</code></pre></p>
+<p>编译这两个文件并且运行 EmployeeTest 类，可以看到如下结果：</p> <pre lang="java"><code class="java">C :&gt; javac Employee.java
+C :&gt; vi EmployeeTest.java
+C :&gt; javac  EmployeeTest.java
+C :&gt; java EmployeeTest
+Name:James Smith
+Age:26
+Designation:Senior Software Engineer
+Salary:1000.0
+Name:Mary Anne
+Age:21
+Designation:Software Engineer
+Salary:500.0
+</code></pre>
+<p>
+    <br>
+</p></div>
+<div style="clear:both"></div>
+</div>
+<!--控制本地字体主题样式-->
+<script type="text/javascript">
+var tempFontsize = $.cookie("fontsize");
+if (tempFontsize != undefined) {
+$("#pro-mian").addClass(tempFontsize);
+}
+</script>
+          </div>
+        </div>
+
+        
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">个人博客</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://liting23.github.io//atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>Java | Liting</title>
+<meta name="description" content="个人博客">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://liting23.github.io//favicon.ico?v=1629105908211">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://liting23.github.io//styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://liting23.github.io/">
+        <img class="avatar" src="https://liting23.github.io//images/avatar.png?v=1629105908211" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://liting23.github.io/">
+        <h1 class="site-title">Liting</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="https://liting23.github.io/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+
+        <div class="current-tag-container">
+          <h2 class="title">
+            <i class="icon icon-pricetags-outline"></i> Java
+          </h2> 
+        </div>
+
+        
+<section class="post-item">
+    <div class="content">
+      <a href="https://liting23.github.io/java3/">
+        <h2 class="post-title">Java教程 （三） 对象与类</h2>
+      </a>
+      <div class="post-abstract">
+        
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2021-08-16</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://liting23.github.io/FVnAJpQHw/">
+                Java
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+      <a href="https://liting23.github.io/java3/">
+        <div class="feature-container" style="background-image: url('https://liting23.github.io//post-images/java3.jpg')">
+        </div>
+      </a>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
+      <a href="https://liting23.github.io/java2/">
+        <h2 class="post-title">Java教程 (二) 安装开发IDE并编写第一个java程序</h2>
+      </a>
+      <div class="post-abstract">
+        <p>流行JAVA开发工具<br>
+正所谓工欲善其事必先利其器，我们在开发java语言过程中同样需要一款不错的开发工具，目前市场上的IDE很多，本文为大家推荐以下下几款java开发工具：</p>
+<p>Eclipse（推荐）:另一个免费开源的java IDE，下载地址： https://www.eclipse.org/eclipseide/</p>
+<p>选择 Eclipse IDE for Java Developers：</p>
+<p>Notepad++ : Notepad++ 是在微软视窗环境之下的一个免费的代码编辑器，下载地址： http://notepad-plus-plus.org/</p>
+
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2021-08-16</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://liting23.github.io/FVnAJpQHw/">
+                Java
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+      <a href="https://liting23.github.io/java2/">
+        <div class="feature-container" style="background-image: url('https://liting23.github.io//post-images/java2.jpg')">
+        </div>
+      </a>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
+      <a href="https://liting23.github.io/java1/">
+        <h2 class="post-title">Java 教程 (一) 安装jdk</h2>
+      </a>
+      <div class="post-abstract">
+        <p>在本章节中我们将为大家介绍如何搭建Java开发环境，以及不同系统下的环境变量怎么配置。</p>
+
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2021-08-16</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://liting23.github.io/FVnAJpQHw/">
+                Java
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+      <a href="https://liting23.github.io/java1/">
+        <div class="feature-container" style="background-image: url('https://liting23.github.io//post-images/java1.jpg')">
+        </div>
+      </a>
+    
+  </section>
+
+
+<div class="pagination-container">
+  
+  
+</div>
+
+
+      </div>
+
+      <div class="site-footer">
+  <div class="slogan">个人博客</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://liting23.github.io//atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>

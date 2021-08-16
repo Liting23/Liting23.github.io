@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://liting23.github.io/</id>
+    <title>Liting</title>
+    <updated>2021-08-16T09:25:12.435Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://liting23.github.io/"/>
+    <link rel="self" href="https://liting23.github.io/atom.xml"/>
+    <subtitle>个人博客</subtitle>
+    <logo>https://liting23.github.io/images/avatar.png</logo>
+    <icon>https://liting23.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2021, Liting</rights>
+</feed>
